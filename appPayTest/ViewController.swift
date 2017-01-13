@@ -10,6 +10,10 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    
+    var payModel 
+    var mchID string?
+    var outTradeNo string?
     @IBOutlet weak var mchIDTextField: UITextField!
     @IBOutlet weak var mchKeyTextField: UITextField!
     @IBOutlet weak var totalFee: UITextField!
@@ -29,6 +33,15 @@ class ViewController: UIViewController {
     
     func makeXMLBody(){
         
+        var dic =  [
+            "mch_id":mchIDTextField.text,
+            "out_trade_no":
+            
+        ]
+
+        dic["mch_id"] = mchIDTextField.text
+        let xmlData = try PropertyListSerialization.data(fromPropertyList: dic, format: .xml, options: 0)
+
     }
 }
 

@@ -14,6 +14,7 @@
 		E987F5DF1E28C80D0097821B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E987F5DD1E28C80D0097821B /* LaunchScreen.storyboard */; };
 		E987F5E71E28CDA00097821B /* lib in Resources */ = {isa = PBXBuildFile; fileRef = E987F5E61E28CDA00097821B /* lib */; };
 		E987F5E91E28CDDA0097821B /* const.swift in Sources */ = {isa = PBXBuildFile; fileRef = E987F5E81E28CDDA0097821B /* const.swift */; };
+		E987F5F01E28DC7F0097821B /* payModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E987F5EF1E28DC7F0097821B /* payModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		E987F5E01E28C80D0097821B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E987F5E61E28CDA00097821B /* lib */ = {isa = PBXFileReference; lastKnownFileType = folder; path = lib; sourceTree = "<group>"; };
 		E987F5E81E28CDDA0097821B /* const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = const.swift; sourceTree = "<group>"; };
+		E987F5EF1E28DC7F0097821B /* payModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = payModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				E987F5DD1E28C80D0097821B /* LaunchScreen.storyboard */,
 				E987F5E01E28C80D0097821B /* Info.plist */,
 				E987F5E81E28CDDA0097821B /* const.swift */,
+				E987F5EF1E28DC7F0097821B /* payModel.swift */,
 			);
 			path = appPayTest;
 			sourceTree = "<group>";
@@ -152,6 +155,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E987F5F01E28DC7F0097821B /* payModel.swift in Sources */,
 				E987F5E91E28CDDA0097821B /* const.swift in Sources */,
 				E987F5D71E28C80D0097821B /* ViewController.swift in Sources */,
 				E987F5D51E28C80D0097821B /* AppDelegate.swift in Sources */,
