@@ -10,6 +10,11 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var mchIDTextField: UITextField!
+    @IBOutlet weak var mchKeyTextField: UITextField!
+    @IBOutlet weak var totalFee: UITextField!
+    @IBOutlet weak var notifyUrlTextField: UITextField!
+    @IBOutlet weak var tradeNoTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,6 +25,10 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    
+    
+    func makeXMLBody(){
+        
+    }
 }
 
