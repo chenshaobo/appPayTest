@@ -63,14 +63,14 @@ class ViewController: UIViewController {
         request.httpBody = payModel?.xml().data(using: String.Encoding.utf8)
         
         
-        Alamofire.request(request )
-            .responseData{ res in
+        Alamofire.request(request).responseData{ res in
                 // do whatever you want here
             let string = String(data: res.data!, encoding: String.Encoding.utf8)! as String
                 // parse xml document
-            let xml = try! XML.parse(string)
+            print(string)
+            let xml = XML.parse(res.data!)
             let req = PayReq()
-               /* <xml>
+            /* <xml>
                     <out_trade_no>636199753633145344</out_trade_no>
                     <sign>98CF973E8FDD1BEE69B0A1BA9393FAE6</sign>
                     <result_code>SUCCESS</result_code>
@@ -80,11 +80,12 @@ class ViewController: UIViewController {
                     <return_msg>OK</return_msg>
                     <mch_id>100010</mch_id>
                     <nonce_str>26f066c3c450b2ee92745e1a25209cf8</nonce_str>
-                  </xml>
+               </xml>
             */
-            let appID = xml["parent_id"].text!
-            let prepayID = xml["prepay_id"].text!
+            let appID = xml["xml"]["parent_id"].text!
+            let prepayID = xml["xml"]["prepay_id"].text!
             let timestamp = UInt32(Date().timestamp)
+            req.openID = AppID
             req.partnerId = appID
             req.prepayId = prepayID
             req.nonceStr = self.payModel?.nonceStr
@@ -93,7 +94,7 @@ class ViewController: UIViewController {
             req.sign = "appid="
             WXApi.send(req)
                 
-            print("appid=\(req.openID)\npartid=\(req.partnerId)\nprepayid=\(req.prepayId)\nnoncestr=\(req.nonceStr)\ntimestamp=\(req.timeStamp)\npackage=\(req.package)\nsign=\(req.sign)")
+            print("appid=\(req.openID)\nparentid=\(req.partnerId)\nprepayid=\(req.prepayId)\nnoncestr=\(req.nonceStr)\ntimestamp=\(req.timeStamp)\npackage=\(req.package)\nsign=\(req.sign)")
         }
     }
     

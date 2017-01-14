@@ -14,4 +14,5 @@
 //wechat
 #import "WXApi.h"
 #import "WXApiObject.h"
+//#import "WechatAuthSDK.h"
 #endif /* appPayTest_Bridging_Header_h */

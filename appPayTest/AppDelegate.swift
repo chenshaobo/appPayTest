@@ -9,13 +9,14 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate,WXApiDelegate {
 
     var window: UIWindow?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        WXApi.registerApp(AppID,withDescription: "由支付")
         return true
     }
 
@@ -40,6 +41,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        print("openURL:\(url.absoluteString)")
+        
+        if url.scheme == AppID {
+            return WXApi.handleOpen(url, delegate: self)
+        }
+        
+        //跳转支付宝钱包进行支付，处理支付结果
+        //  AlipaySDK.defaultService().processOrder(withPaymentResult: url, standbyCallback: {
+        //  (success: Bool, error: Error?) -> Void in
+        //    print("openURL result: \(success,error)")
+        //    })
+        
+        return true
+    }
+    
+    func onResp(_ resp: BaseResp!) {
+        //var strTitle = "支付结果"
+        var strMsg = "\(resp.errCode)"
+        if resp.isKind(of: PayResp.self) {
+            switch resp.errCode {
+            case 0 :
+                //NotificationCenter.default.post(name: Notification.Name(rawValue: WXPaySuccessNotification), object: nil)
+                print("notify ok")
+            default:
+                strMsg = "支付失败，请您重新支付!"
+                print("retcode = \(resp.errCode), retstr = \(resp.errStr)")
+            }
+        }
+        //let alert = UIAlertView(title: nil, message: strMsg, delegate: nil, cancelButtonTitle: "好的")
+        //alert.show()
+    }
+    
+
 
 
 }
