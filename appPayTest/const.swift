@@ -12,8 +12,8 @@ import Foundation
 let SERVER_HOST = "http://10.17.2.253:8080"
 
 let WX_APP_PAY = SERVER_HOST + "/wechat/orders"
-
-
+let AppID = "wxa669bafa43998003"
+let Secreet = "8a0fdf93ac525325809e2883df863fd3"
 func md5(_ string: String) -> String {
     print(string)
     let context = UnsafeMutablePointer<CC_MD5_CTX>.allocate(capacity: 1)

@@ -11,8 +11,6 @@
 		E95886231E29CBB80011994F /* Alamofire in Resources */ = {isa = PBXBuildFile; fileRef = E958861F1E29CBB80011994F /* Alamofire */; };
 		E95886251E29CBB80011994F /* Util in Resources */ = {isa = PBXBuildFile; fileRef = E95886211E29CBB80011994F /* Util */; };
 		E95886261E29CBB80011994F /* WeChatSDK in Resources */ = {isa = PBXBuildFile; fileRef = E95886221E29CBB80011994F /* WeChatSDK */; };
-		E95886271E29DCD50011994F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E95886041E29C7AF0011994F /* Alamofire.framework */; };
-		E95886281E29DCD50011994F /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E95886041E29C7AF0011994F /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E987F5D51E28C80D0097821B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E987F5D41E28C80D0097821B /* AppDelegate.swift */; };
 		E987F5D71E28C80D0097821B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E987F5D61E28C80D0097821B /* ViewController.swift */; };
 		E987F5DA1E28C80D0097821B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E987F5D81E28C80D0097821B /* Main.storyboard */; };
@@ -21,6 +19,10 @@
 		E987F5E91E28CDDA0097821B /* const.swift in Sources */ = {isa = PBXBuildFile; fileRef = E987F5E81E28CDDA0097821B /* const.swift */; };
 		E987F5F01E28DC7F0097821B /* payModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E987F5EF1E28DC7F0097821B /* payModel.swift */; };
 		E9F672361E2A05E4006619AB /* openssl in Resources */ = {isa = PBXBuildFile; fileRef = E9F672351E2A05E4006619AB /* openssl */; };
+		E9F6723F1E2A0EE7006619AB /* SwiftyXMLParser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F6723E1E2A0EE7006619AB /* SwiftyXMLParser.framework */; };
+		E9F672401E2A0EE7006619AB /* SwiftyXMLParser.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E9F6723E1E2A0EE7006619AB /* SwiftyXMLParser.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E9F672421E2A14C3006619AB /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E95886041E29C7AF0011994F /* Alamofire.framework */; };
+		E9F672431E2A14C3006619AB /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E95886041E29C7AF0011994F /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,7 +75,7 @@
 			remoteGlobalIDString = E4202FE01B667AA100C997FB;
 			remoteInfo = "Alamofire watchOS";
 		};
-		E95886291E29DCD50011994F /* PBXContainerItemProxy */ = {
+		E9F672441E2A14C3006619AB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E95885F81E29C7AE0011994F /* Alamofire.xcodeproj */;
 			proxyType = 1;
@@ -89,7 +91,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E95886281E29DCD50011994F /* Alamofire.framework in Embed Frameworks */,
+				E9F672401E2A0EE7006619AB /* SwiftyXMLParser.framework in Embed Frameworks */,
+				E9F672431E2A14C3006619AB /* Alamofire.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -116,6 +119,7 @@
 		E987F5E81E28CDDA0097821B /* const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = const.swift; sourceTree = "<group>"; };
 		E987F5EF1E28DC7F0097821B /* payModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = payModel.swift; sourceTree = "<group>"; };
 		E9F672351E2A05E4006619AB /* openssl */ = {isa = PBXFileReference; lastKnownFileType = folder; name = openssl; path = lib/openssl; sourceTree = "<group>"; };
+		E9F6723E1E2A0EE7006619AB /* SwiftyXMLParser.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyXMLParser.framework; path = appPayTest/Carthage/Build/iOS/SwiftyXMLParser.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,7 +127,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E95886271E29DCD50011994F /* Alamofire.framework in Frameworks */,
+				E9F6723F1E2A0EE7006619AB /* SwiftyXMLParser.framework in Frameworks */,
+				E9F672421E2A14C3006619AB /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,6 +171,7 @@
 		E987F5C81E28C80D0097821B = {
 			isa = PBXGroup;
 			children = (
+				E9F6723E1E2A0EE7006619AB /* SwiftyXMLParser.framework */,
 				E95885F81E29C7AE0011994F /* Alamofire.xcodeproj */,
 				E95885F71E29C79D0011994F /* libWeChatSDK.a */,
 				E95885F51E29C7840011994F /* libcrypto.a */,
@@ -224,7 +230,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				E958862A1E29DCD50011994F /* PBXTargetDependency */,
+				E9F672451E2A14C3006619AB /* PBXTargetDependency */,
 			);
 			name = appPayTest;
 			productName = appPayTest;
@@ -358,10 +364,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		E958862A1E29DCD50011994F /* PBXTargetDependency */ = {
+		E9F672451E2A14C3006619AB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Alamofire iOS";
-			targetProxy = E95886291E29DCD50011994F /* PBXContainerItemProxy */;
+			targetProxy = E9F672441E2A14C3006619AB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -483,15 +489,21 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = UM7X32F3VG;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/appPayTest/Carthage/Build/iOS",
+				);
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/appPayTest/lib/**";
 				INFOPLIST_FILE = appPayTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.chenshaobo.appPayTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "appPayTest-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -502,6 +514,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = UM7X32F3VG;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/appPayTest/Carthage/Build/iOS",
+				);
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/appPayTest/lib/**";
 				INFOPLIST_FILE = appPayTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -510,6 +526,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "appPayTest-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Release;
 		};

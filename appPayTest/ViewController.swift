@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import SwiftyXMLParser
 
 class ViewController: UIViewController {
 
@@ -62,11 +63,37 @@ class ViewController: UIViewController {
         request.httpBody = payModel?.xml().data(using: String.Encoding.utf8)
         
         
-        Alamofire.request(request as URLRequestConvertible)
+        Alamofire.request(request )
             .responseData{ res in
                 // do whatever you want here
-            print((String(data: res.data!, encoding: String.Encoding.utf8)! as String))
-
+            let string = String(data: res.data!, encoding: String.Encoding.utf8)! as String
+                // parse xml document
+            let xml = try! XML.parse(string)
+            let req = PayReq()
+               /* <xml>
+                    <out_trade_no>636199753633145344</out_trade_no>
+                    <sign>98CF973E8FDD1BEE69B0A1BA9393FAE6</sign>
+                    <result_code>SUCCESS</result_code>
+                    <prepay_id>wx201701141522448311c5685a0590628307</prepay_id>
+                    <trade_type>APP</trade_type>
+                    <return_code>SUCCESS</return_code>
+                    <return_msg>OK</return_msg>
+                    <mch_id>100010</mch_id>
+                    <nonce_str>26f066c3c450b2ee92745e1a25209cf8</nonce_str>
+                  </xml>
+            */
+            let appID = xml["parent_id"].text!
+            let prepayID = xml["prepay_id"].text!
+            let timestamp = UInt32(Date().timestamp)
+            req.partnerId = appID
+            req.prepayId = prepayID
+            req.nonceStr = self.payModel?.nonceStr
+            req.timeStamp = timestamp
+            req.package = "Sign=WXPay"
+            req.sign = "appid="
+            WXApi.send(req)
+                
+            print("appid=\(req.openID)\npartid=\(req.partnerId)\nprepayid=\(req.prepayId)\nnoncestr=\(req.nonceStr)\ntimestamp=\(req.timeStamp)\npackage=\(req.package)\nsign=\(req.sign)")
         }
     }
     

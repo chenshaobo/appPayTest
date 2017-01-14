@@ -65,13 +65,4 @@ extension PayModel {
 }
 
 
-extension PayModel: ParameterEncoding {
 
-    func encode(_ urlRequest: URLRequestConvertible, with parameters: Parameters?) throws -> URLRequest {
-        var urlRequest = urlRequest.urlRequest
-        //urlRequest?.httpMethod = .post
-        urlRequest?.httpBody = self.xml().data(using:String.Encoding.utf8)
-        
-        return urlRequest!
-    }
-}
